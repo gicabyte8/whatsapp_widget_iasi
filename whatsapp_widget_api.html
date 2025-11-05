@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WhatsApp Chat – Cătălin Obloja</title>
+  <style>
+    :root{
+      --wa: #25D366;
+      --wa-dark:#1ebe5d;
+      --bg:#ffffff;
+      --text:#0b141a;
+      --muted:#667781;
+      --bubble:#e1ffc7;
+      --shadow:0 10px 30px rgba(0,0,0,.12);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; padding:16px;
+      background:transparent; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial,sans-serif;
+      color:var(--text);
+    }
+    .widget{
+      width:100%; max-width:360px; margin:0 auto;
+      background:var(--bg); border-radius:var(--radius); box-shadow:var(--shadow);
+      overflow:hidden; border:1px solid #eef2ef;
+    }
+    .header{
+      display:flex; align-items:center; gap:12px; padding:14px 14px;
+      background:linear-gradient(180deg, #eafff1 0%, #ffffff 100%);
+      border-bottom:1px solid #e8f5ee;
+    }
+    .avatar{
+      width:44px; height:44px; border-radius:50%;
+      background:#fff; flex:0 0 44px; overflow:hidden; border:2px solid #dff7e8;
+    }
+    .avatar img{width:100%; height:100%; object-fit:cover}
+    .title{
+      display:flex; flex-direction:column; line-height:1.15;
+    }
+    .name{font-weight:700}
+    .status{font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px}
+    .dot{width:8px; height:8px; border-radius:50%; background:#22c55e; box-shadow:0 0 0 3px rgba(34,197,94,.15)}
+    .brand{
+      margin-left:auto; display:flex; align-items:center; gap:8px; opacity:.9;
+    }
+    .brand svg{width:24px; height:24px}
+    .body{
+      padding:14px; background:#f8fbf9;
+    }
+    .bubble{
+      display:inline-block; background:var(--bubble); color:#0b3d12;
+      padding:12px 14px; border-radius:14px 14px 14px 4px; box-shadow:0 2px 0 rgba(0,0,0,.06);
+      font-size:14.5px;
+    }
+    .footer{
+      padding:14px; background:#fff; border-top:1px solid #eef4ef; display:flex; gap:10px; align-items:center; justify-content:space-between;
+    }
+    .cta{
+      appearance:none; border:0; cursor:pointer;
+      background:var(--wa); color:#fff; font-weight:700;
+      padding:12px 16px; border-radius:12px; width:100%;
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      transition:transform .05s ease, background .2s ease;
+      text-decoration:none;
+    }
+    .cta:hover{background:var(--wa-dark)}
+    .cta:active{transform:translateY(1px)}
+    .cta svg{width:20px; height:20px; flex:0 0 20px; fill:#fff}
+    .disclaimer{
+      font-size:12px; color:var(--muted); text-align:center; padding:8px 14px 14px;
+    }
+    /* Responsive squeeze inside narrow iframes */
+    @media (max-width:380px){
+      .widget{max-width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="widget" role="region" aria-label="WhatsApp chat box">
+    <div class="header">
+      <div class="avatar">
+        <img src="https://blog.gica.ro/wp-content/uploads/2025/11/poza_profil_gica.jpg" alt="Foto profil Cătălin Obloja" />
+      </div>
+      <div class="title">
+        <div class="name">Cătălin Obloja</div>
+        <div class="status"><span class="dot"></span> Online</div>
+      </div>
+      <div class="brand" aria-hidden="true" title="WhatsApp">
+        <!-- WhatsApp logo (SVG inline) -->
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path fill="#25D366" d="M19.11 5.49a10.59 10.59 0 0 0-9.13 15.87l-1.04 3.81 3.91-1.02a10.6 10.6 0 1 0 6.26-18.66z"/>
+          <path fill="#fff" d="M24.61 18.91c-.13-.22-.47-.35-.98-.61s-3.02-1.49-3.49-1.66c-.47-.17-.81-.26-1.15.26s-1.32 1.66-1.62 2.01-.6.38-1.11.13-2.16-.8-4.12-2.55c-1.52-1.35-2.55-3.02-2.85-3.53s-.03-.79.23-1.05c.23-.23.52-.6.79-.9.27-.3.35-.52.52-.87.17-.35.09-.64-.04-.9s-1.15-2.77-1.58-3.79c-.41-1-.83-.86-1.15-.88l-.98-.02c-.35 0-.9.13-1.38.64s-1.82 1.78-1.82 4.33 1.86 5.02 2.12 5.37 3.66 5.6 8.88 7.64c1.24.54 2.2.86 2.95 1.11 1.24.39 2.37.34 3.27.21 1-.15 3.02-1.24 3.45-2.43.43-1.19.43-2.21.3-2.43z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="bubble">Salut, sunt Consultantul Zonal - Iași. Cu ce pot să vă ajut?</div>
+    </div>
+
+    <div class="footer">
+      <a class="cta"
+         href="https://wa.me/40743533449?text=Salut%21%20Am%20vizitat%20nodul%20digital%20Ia%C8%99i%20%C8%99i%20am%20nevoie%20de%20informa%C8%9Bii.%20Mul%C8%9Bumesc%21"
+         target="_blank" rel="noopener">
+        <!-- WA icon small -->
+        <svg viewBox="0 0 32 32" role="img" aria-label="Deschide WhatsApp"><path d="M19.11 5.49a10.59 10.59 0 0 0-9.13 15.87l-1.04 3.81 3.91-1.02a10.6 10.6 0 1 0 6.26-18.66z" fill="currentColor" opacity=".25"></path><path d="M24.61 18.91c-.13-.22-.47-.35-.98-.61s-3.02-1.49-3.49-1.66c-.47-.17-.81-.26-1.15.26s-1.32 1.66-1.62 2.01-.6.38-1.11.13-2.16-.8-4.12-2.55c-1.52-1.35-2.55-3.02-2.85-3.53s-.03-.79.23-1.05c.23-.23.52-.6.79-.9.27-.3.35-.52.52-.87.17-.35.09-.64-.04-.9s-1.15-2.77-1.58-3.79c-.41-1-.83-.86-1.15-.88l-.98-.02c-.35 0-.9.13-1.38.64s-1.82 1.78-1.82 4.33 1.86 5.02 2.12 5.37 3.66 5.6 8.88 7.64c1.24.54 2.2.86 2.95 1.11 1.24.39 2.37.34 3.27.21 1-.15 3.02-1.24 3.45-2.43.43-1.19.43-2.21.3-2.43z" fill="#fff"></path></svg>
+        Deschide WhatsApp
+      </a>
+    </div>
+
+    <div class="disclaimer">Conversația se deschide în WhatsApp (aplicație sau web).</div>
+  </div>
+</body>
+</html>
